@@ -1,5 +1,8 @@
+import model.FirstClass
+
 fun main() {
-    printMessage(prefix = "Hello world", message = "Print")
+
+    printMessage(prefix = FirstClass().getString(), message = "Print")
     printMessage("Printing")
     printMessage(prefix = null)
     val value: Int = add(10, 20)
