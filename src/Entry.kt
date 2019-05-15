@@ -1,5 +1,19 @@
 fun main() {
-    listOperations();
+    mapOperations()
+}
+
+
+fun mapOperations() {
+    val map = mutableMapOf<Int, String?>()
+    map.put(2, "Akshay")
+    map.put(50, "Prabhu")
+    map.put(20, "Ajay")
+    map.put(2, "Aks")
+
+    println(map)
+    println("Value of 50 is ${map[20]}")
+
+    map.forEach { x, y -> println("key ${x} value ${y}") }
 }
 
 /**
