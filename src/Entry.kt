@@ -1,9 +1,48 @@
-import kotlin.test.todo
-
 fun main() {
-    collections()
+    listOperations();
 }
 
+/**
+ * List operations
+ */
+fun listOperations() {
+    // Mutable And Immutable Lists
+    //replace mutableListOf by listOf and check for the available methods
+    val iList = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+    println(iList)
+    iList[0] = 10
+    println(iList)
+
+    iList.remove(3)
+    iList.remove(20)
+    println(iList)
+
+    iList.removeAt(0)
+    println(iList)
+
+    iList.removeIf() { it % 2 == 0 }
+    println(iList)
+
+    val subList = iList.subList(0, 4)
+    subList.add(0, 5) //if the parent list is mutable, it will return mutable list
+    println("Sub list ${subList}")
+}
+
+/**
+ * Exception Handling
+ */
+fun exceptionHandling() {
+    val divisor = 0
+    try {
+        if (divisor.equals(0)) {
+            throw IllegalArgumentException("Can not divide by zero")
+        } else {
+            println(5 / divisor)
+        }
+    } catch (e: IllegalArgumentException) {
+        println(e)
+    }
+}
 
 /**
  * Collections
