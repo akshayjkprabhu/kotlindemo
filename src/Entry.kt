@@ -1,8 +1,26 @@
+import model.Animal
+import model.Bird
+import model.Dog
+
 fun main() {
-    mapOperations()
+    classesAndObjects()
 }
 
+/**
+ * Classes and objects
+ */
+fun classesAndObjects() {
+    val dog = Animal("Dog", 250.0, 65.0)
+    println(dog.getInfo())
+    val tyson = Dog("Tyson", 20.0, 45.0, "Akshay")
+    println(tyson.getInfo())
+    val parrot = Bird("Tweety");
+    parrot.fly(10.0);
+}
 
+/**
+ * Map operations
+ */
 fun mapOperations() {
     val map = mutableMapOf<Int, String?>()
     map.put(2, "Akshay")
