@@ -3,7 +3,29 @@ import model.Bird
 import model.Dog
 
 fun main() {
-    classesAndObjects()
+    nullSafety();
+}
+
+/**
+ * Null safety
+ * Built directly into kotlin
+ *
+ */
+fun nullSafety() {
+    var nullVal: String? = null
+
+    fun returnNull(): String? {
+        return null
+    }
+
+    if (nullVal != null) {
+        println("Length = ${nullVal}")
+    }
+    nullVal = returnNull();
+
+    println(nullVal?.length);
+    println(nullVal?.length)
+    println(nullVal?.length ?: "When is null")
 }
 
 /**
@@ -150,8 +172,8 @@ fun listProperties() {
 }
 
 /**
- * Condiations
- * */
+ * Conditions
+ **/
 
 fun give(obj: Any): String? {
     return when (obj) {
