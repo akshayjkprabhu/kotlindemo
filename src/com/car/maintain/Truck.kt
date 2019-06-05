@@ -25,11 +25,14 @@ class Truck : CarOptions {
         return getPrice()?.minus(milesDrive?.times(20) ?: 0)
     }
 
-    fun getCarPriceWrapper(): Double? {
-        return super.getCarPrice();
-    }
+/*    fun getCarPriceWrapper(): Double? {
+        return super.getCarPrice()
+    }*/
 }
 
+fun Truck.getCarPriceWrapper(): Double? {
+    return this.getCarPrice()
+}
 
 fun main() {
     val car1 = Truck("BMW", 2015, 10000.0, 105, "Akshay", "NN")
