@@ -2,7 +2,7 @@ package com.car.maintain
 
 open class CarOptions {
     var type: String? = null
-    var price: Double? = 0.0
+    private var price: Double? = 0.0
     var milesDrive: Int? = null
     var model: Int? = null
     var owner: String? = null
@@ -28,8 +28,12 @@ open class CarOptions {
         this.milesDrive = milesDrive;
     }
 
-    fun getCarPrice(): Double? {
+   open fun getCarPrice(): Double? {
         return this.price?.minus(milesDrive?.times(10)?.toDouble() ?: 0.0)
+    }
+
+    protected fun getPrice(): Double? {
+        return price
     }
 }
 

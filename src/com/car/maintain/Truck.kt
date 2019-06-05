@@ -1,13 +1,13 @@
 package com.car.maintain
 
 class Truck : CarOptions {
-    var subType: String? ="None"
+    var subType: String? = "None"
 
     init {
         println("Object is created")
     }
 
-    constructor():super()
+    constructor() : super()
 
     constructor(type: String, model: Int, price: Double, milesDrive: Int, owner: String, subType: String)
             : super(type, model, price, milesDrive, owner) {
@@ -20,6 +20,14 @@ class Truck : CarOptions {
 
         this.subType = subType;
     }
+
+    override fun getCarPrice(): Double? {
+        return getPrice()?.minus(milesDrive?.times(20) ?: 0)
+    }
+
+    fun getCarPriceWrapper(): Double? {
+        return super.getCarPrice();
+    }
 }
 
 
@@ -30,7 +38,7 @@ fun main() {
 
 
     //listOfCars
-    val listOfCars = arrayListOf<CarOptions>()
+    val listOfCars = arrayListOf<Truck>()
     listOfCars.add(car1)
     listOfCars.add(car2)
     listOfCars.add(car3)
@@ -38,5 +46,6 @@ fun main() {
         println(car.type)
         println(car.owner)
         println(car.getCarPrice())
+        println(car.getCarPriceWrapper())
     }
 }
