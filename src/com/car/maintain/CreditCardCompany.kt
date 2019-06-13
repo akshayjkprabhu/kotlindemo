@@ -16,6 +16,16 @@ class MasterCard(override val creditCardNo: String) : CreditCard {
     }
 }
 
+/**
+ * Delegation
+ */
+
+class PayPal(client: CreditCard) : CreditCard by client {
+    fun print() {
+        println(this.creditCardNo)
+    }
+}
+
 class VisaCard : CreditCard {
     override val creditCardNo: String
         get() = "44444"
@@ -33,7 +43,14 @@ fun main() {
     val visa = VisaCard()
     visa.score(51)
 
+    val payPal1 = PayPal(visa);
+    payPal1.print()
+
 
     val master = MasterCard("125545")
     master.score(51)
+
+
+    val payPal2 = PayPal(master);
+    payPal2.print()
 }
