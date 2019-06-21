@@ -22,6 +22,10 @@ fun main(args: Array<String>) {
     sortPeople()
 }
 
+/**
+ * The class should implement Comparable interface in order for
+ * the Collections to perform the sort operation on the lists
+ */
 fun sortPeople() {
     var people = ArrayList<Person>();
     people.add(Person("Akshay", 22))
@@ -41,6 +45,9 @@ fun sortPeople() {
 
 }
 
+/**
+ * ArrayList by implements Comparable interface
+ */
 fun sortListOfStrings() {
     var listOfNames = ArrayList<String>()
     listOfNames.add("Akshay")
